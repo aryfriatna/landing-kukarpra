@@ -4,14 +4,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config('app.name', 'TirePro') }} - @yield('title')</title>
+
+    <title>{{ config('app.name', 'Kusuma Karya Pratama') }} - @yield('title', 'Home')</title>
+    <meta name="description" content="@yield('meta_description', 'Kusuma Karya Pratama menyediakan ban berkualitas dengan pelayanan terbaik.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'ban, tire, otomotif, layanan ban, Kusuma Karya Pratama')">
+    <meta name="author" content="Kusuma Karya Pratama">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="icon" href="{{ asset('assets/icon.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body class="min-h-screen flex flex-col">
-    <header class="fixed w-full z-50 transition-all duration-300 bg-white shadow-md py-4">
+    <header class="fixed w-full z-50 transition-all duration-300 bg-white shadow-md py-2">
         <div class="container mx-auto px-4 md:px-6">
             <div class="flex justify-between items-center">
                 <a href="{{ route('home') }}" class="flex items-center">
@@ -162,7 +167,7 @@
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                             <a class="text-gray-300 hover:text-white transition-colors"
-                                href="https://maps.app.goo.gl/8nbEfD4jqmgFM5Ae6">
+                                href="https://maps.app.goo.gl/h3PmeFRsQxm4nSDu5" target="_blank">
                                 Kembang Kuning, Klapanunggal, Bogor Regency, West Java 16710
                             </a>
                         </li>
