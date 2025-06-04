@@ -24,7 +24,7 @@ class ContactController extends Controller
         ]);
 
         // Send email
-        Mail::to('info@tirepro.com')->send(new ContactFormMail($validated));
+        Mail::to('ptkusumakaryapratama@gmail.com')->send(new ContactFormMail($validated));
 
         return back()->with('success', 'Thank you for your message. We will get back to you soon!');
     }
