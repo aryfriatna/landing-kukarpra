@@ -12,7 +12,7 @@
                     Your Trusted Partner for Heavy Equipment Wheel System Solution.
                 </p>
                 <div class="w-20 h-2 bg-red-500 mb-8"></div>
-                <p class="text-gray-300 mb-6">
+                <p class="text-gray-300 mb-6 text-justify">
                     Kunci kepuasan pelanggan kami terletak pada beberapa faktor diantaranya adalah keahlian dalam
                     memberikan solusi produk yang tepat guna untuk menjawab kebutuhan setiap pelanggan kami yang
                     beragam, ketersediaan produk – produk yang berkualitas dengan harga yang bersaing, dan delivery yang
@@ -34,27 +34,27 @@
                 <div class="md:w-1/2">
                     <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Story</h2>
                     <div class="w-16 h-1 bg-red-500 mb-6"></div>
-                    <p class="text-gray-700 mb-4">
+                    <p class="text-gray-700 mb-4 text-justify">
                         PT Kusuma Karya Pratama adalah perusahaan yang bergerak di bidang penyediaan berbagai jenis ban
                         Truck di Indonesia. Produk – produk kami antara lain : ban forklift, ban Truck Ringan, Truck Sedang
                         dan Truck Tronton, dan ban alat berat lainnya.
                     </p>
-                    <p class="text-gray-700 mb-4">
+                    <p class="text-gray-700 mb-4 text-justify">
                         PT Kusuma Karya Pratama telah dipercaya oleh berbagai perusahaan pengguna alat berat yang tersebar
                         dari Sabang sampai Merauke mulai dari yang berskala kecil, menengah, sampai perusahaan pemerintah
                         dan perusahaan multi national dalam penyediaan ban alat berat mulai dari bidang industrial,
                         konstruksi, pertambangan, pertanian, perkebunan, kehutanan, pergudangan, dan sebagainya.
                     </p>
-                    <p class="text-gray-700 mb-6">
+                    <p class="text-gray-700 mb-6 text-justify">
                         Kunci kepuasan pelanggan kami terletak pada beberapa faktor diantaranya adalah keahlian dalam
                         memberikan solusi produk yang tepat guna untuk menjawab kebutuhan setiap pelanggan kami yang
                         beragam, ketersediaan produk – produk yang berkualitas dengan harga yang bersaing, dan delivery yang
                         tepat waktu demi meminimalisir down time dari alat berat Anda yang pasti akan berujung pada
                         efisiensi dan efektifitas yang maksimal.
                     </p>
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('products') }}"
                         class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-500 hover:bg-red-600">
-                        Hubungi Kami
+                        Lihat Produk
                     </a>
                 </div>
             </div>
