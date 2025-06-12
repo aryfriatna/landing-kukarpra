@@ -13,6 +13,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="icon" href="{{ asset('assets/icon.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 
 <body class="min-h-screen flex flex-col">
@@ -40,19 +41,67 @@
                     </div>
                 </a>
 
-                <nav class="hidden md:flex space-x-8">
+                @php
+                    $productRoute =
+                        Route::is('products') ||
+                        Route::is('products.forklift') ||
+                        Route::is('products.dumpTruck') ||
+                        Route::is('products.lightTruck') ||
+                        Route::is('products.tronton');
+                @endphp
+
+                <nav class="hidden md:flex">
                     <a href="{{ route('home') }}"
-                        class="font-medium transition-colors duration-200 {{ request()->routeIs('home') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Home</a>
+                        class="px-4 font-medium transition-colors duration-200 {{ request()->routeIs('home') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Home</a>
                     <a href="{{ route('about') }}"
-                        class="font-medium transition-colors duration-200 {{ request()->routeIs('about') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">About</a>
-                    <a href="{{ route('products') }}"
-                        class="font-medium transition-colors duration-200 {{ request()->routeIs('products') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Products</a>
-                    <a href="{{ route('services') }}"
-                        class="font-medium transition-colors duration-200 {{ request()->routeIs('services') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Services</a>
+                        class="px-4 font-medium transition-colors duration-200 {{ request()->routeIs('about') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">About</a>
+                    {{-- <a href="{{ route('products') }}"
+                        class="font-medium transition-colors duration-200 {{ request()->routeIs('products') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Products</a> --}}
+                    <div class="relative">
+                        <button id="dropdownNavbarLink"
+                            class="flex items-center px-4 font-medium transition-colors duration-200 {{ $productRoute ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">
+                            Products
+                            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+                        <div id="dropdownNavbar"
+                            class="absolute font-medium z-10 hidden bg-white divide-y divide-gray-300 rounded-lg shadow-sm w-44">
+                            <div class="py-1">
+                                <a href="{{ route('products') }}"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100  {{ request()->routeIs('products') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">All
+                                    Products</a>
+                            </div>
+                            <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownNavbarLink">
+                                <li>
+                                    <a href="{{ route('products.forklift') }}"
+                                        class="block px-4 py-2 hover:bg-gray-100 {{ request()->routeIs('products.forklift') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Forklift</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('products.dumpTruck') }}"
+                                        class="block px-4 py-2 hover:bg-gray-100 {{ request()->routeIs('products.dumpTruck') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Dump
+                                        Truck</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('products.lightTruck') }}"
+                                        class="block px-4 py-2 hover:bg-gray-100 {{ request()->routeIs('products.lightTruck') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Light
+                                        Truck</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('products.tronton') }}"
+                                        class="block px-4 py-2 hover:bg-gray-100 {{ request()->routeIs('products.tronton') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Tronton</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    {{-- <a href="{{ route('services') }}"
+                        class="px-4 font-medium transition-colors duration-200 {{ request()->routeIs('services') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Services</a> --}}
                     {{-- <a href="{{ route('gallery') }}"
                         class="font-medium transition-colors duration-200 {{ request()->routeIs('gallery') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Gallery</a> --}}
                     <a href="{{ route('contact') }}"
-                        class="font-medium transition-colors duration-200 {{ request()->routeIs('contact') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Contact</a>
+                        class="px-4 font-medium transition-colors duration-200 {{ request()->routeIs('contact') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Contact</a>
                 </nav>
 
                 <button class="md:hidden text-gray-800" onclick="toggleMobileMenu()" aria-label="Toggle menu">
@@ -66,19 +115,45 @@
 
             <!-- Mobile Menu -->
             <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-md py-4 px-4">
-                <nav class="flex flex-col space-y-4">
+                <nav class="flex flex-col">
                     <a href="{{ route('home') }}"
-                        class="font-medium {{ request()->routeIs('home') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Home</a>
+                        class="py-2 font-medium {{ request()->routeIs('home') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Home</a>
                     <a href="{{ route('about') }}"
-                        class="font-medium {{ request()->routeIs('about') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">About</a>
-                    <a href="{{ route('products') }}"
-                        class="font-medium {{ request()->routeIs('products') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Products</a>
-                    <a href="{{ route('services') }}"
-                        class="font-medium {{ request()->routeIs('services') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Services</a>
+                        class="py-2 font-medium {{ request()->routeIs('about') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">About</a>
+                    {{-- <a href="{{ route('products') }}"
+                        class="py-2 font-medium {{ request()->routeIs('products') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Products</a> --}}
+                    <div class="flex flex-col">
+                        <button id="mobileProductsToggle"
+                            class="flex items-center justify-between py-2 font-medium text-left {{ $productRoute ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">
+                            Products
+                            <svg class="w-3 h-3 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 1l4 4 4-4" />
+                            </svg>
+                        </button>
+                        <div id="mobileProductsDropdown" class="hidden pl-4 flex flex-col font-medium">
+                            <a href="{{ route('products') }}"
+                                class="py-1 text-gray-700 hover:text-red-500 {{ request()->routeIs('products') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">All
+                                Products</a>
+                            <a href="{{ route('products.forklift') }}"
+                                class="py-1 text-gray-700 hover:text-red-500 {{ request()->routeIs('products.forklift') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Forklift</a>
+                            <a href="{{ route('products.dumpTruck') }}"
+                                class="py-1 text-gray-700 hover:text-red-500 {{ request()->routeIs('products.dumpTruck') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Dump
+                                Truck</a>
+                            <a href="{{ route('products.lightTruck') }}"
+                                class="py-1 text-gray-700 hover:text-red-500 {{ request()->routeIs('products.lightTruck') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Light
+                                Truck</a>
+                            <a href="{{ route('products.tronton') }}"
+                                class="py-1 text-gray-700 hover:text-red-500 {{ request()->routeIs('products.tronton') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Tronton</a>
+                        </div>
+                    </div>
+                    {{-- <a href="{{ route('services') }}"
+                        class="py-2 font-medium {{ request()->routeIs('services') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Services</a> --}}
                     {{-- <a href="{{ route('gallery') }}"
                         class="font-medium {{ request()->routeIs('gallery') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Gallery</a> --}}
                     <a href="{{ route('contact') }}"
-                        class="font-medium {{ request()->routeIs('contact') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Contact</a>
+                        class="py-2 font-medium {{ request()->routeIs('contact') ? 'text-red-500' : 'text-gray-800 hover:text-red-500' }}">Contact</a>
                 </nav>
             </div>
         </div>
@@ -97,29 +172,9 @@
                         <span class="text-white">Kusuma Karya <span class="text-red-500">Pratama</span></span>
 
                     </div>
-                    <p class="text-gray-300 mb-4">
+                    <p class="text-gray-300 italic mb-4">
                         Your Trusted Partner for Heavy Equipment Wheel System Solution.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                            </svg>
-                        </a>
-                    </div>
                 </div>
 
                 <!-- Quick Links -->
@@ -132,27 +187,14 @@
                                 class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
                         <li><a href="{{ route('products') }}"
                                 class="text-gray-300 hover:text-white transition-colors">Products</a></li>
-                        <li><a href="{{ route('services') }}"
-                                class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                        {{-- <li><a href="{{ route('services') }}"
+                                class="text-gray-300 hover:text-white transition-colors">Services</a></li> --}}
                         {{-- <li><a href="{{ route('gallery') }}"
                                 class="text-gray-300 hover:text-white transition-colors">Gallery</a></li> --}}
                         <li><a href="{{ route('contact') }}"
                                 class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Services -->
-                {{-- <div>
-                    <h3 class="text-lg font-semibold mb-4 border-b border-blue-700 pb-2">Our Services</h3>
-                    <ul class="space-y-2">
-                        <li class="text-gray-300">Tire Replacement</li>
-                        <li class="text-gray-300">Wheel Alignment</li>
-                        <li class="text-gray-300">Tire Rotation</li>
-                        <li class="text-gray-300">Tire Repair</li>
-                        <li class="text-gray-300">Tire Balancing</li>
-                        <li class="text-gray-300">24/7 Roadside Assistance</li>
-                    </ul>
-                </div> --}}
 
                 <!-- Contact Info -->
                 <div>
@@ -207,6 +249,7 @@
     </script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 <script>
     const swiper = new Swiper('.hero-swiper', {
         loop: true,
@@ -222,6 +265,31 @@
             clickable: true,
         },
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Desktop
+        const toggleBtn = document.getElementById('dropdownNavbarLink');
+        const dropdownMenu = document.getElementById('dropdownNavbar');
+        if (toggleBtn && dropdownMenu) {
+            toggleBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('hidden');
+            });
+            document.addEventListener('click', function() {
+                dropdownMenu.classList.add('hidden');
+            });
+        }
+
+        // Mobile
+        const mobileToggleBtn = document.getElementById('mobileProductsToggle');
+        const mobileDropdown = document.getElementById('mobileProductsDropdown');
+        if (mobileToggleBtn && mobileDropdown) {
+            mobileToggleBtn.addEventListener('click', function() {
+                mobileDropdown.classList.toggle('hidden');
+            });
+        }
+    });
 </script>
+@stack('scripts')
 
 </html>
