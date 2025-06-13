@@ -7,9 +7,9 @@
     <section class="relative pt-24 pb-16 bg-blue-900 text-white">
         <div class="container mx-auto px-4 pt-12">
             <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Hubungi Kami</h1>
                 <p class="text-xl text-gray-300 mb-6">
-                    We're here to help with all your tire needs
+                    Kami siap membantu kebutuhan ban industri anda
                 </p>
                 <div class="w-20 h-2 bg-red-500 mb-8"></div>
             </div>
@@ -22,10 +22,10 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Contact Form -->
                 <div>
-                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Get In Touch</h2>
-                    <p class="text-gray-600 mb-8">
-                        Have questions or need assistance? Fill out the form below and our team will get back to you as soon
-                        as possible.
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Kirim Pesan</h2>
+                    <p class="text-gray-600 mb-8 text-justify">
+                        Punya pertanyaan atau butuh informasi lebih lanjut? Silakan isi formulir di bawah ini dan tim kami
+                        akan segera menghubungi Anda.
                     </p>
 
                     @if (session('success'))
@@ -39,7 +39,7 @@
                         @csrf
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap
                                     *</label>
                                 <input type="text" id="name" name="name" required
                                     class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200">
@@ -49,7 +49,7 @@
                             </div>
 
                             <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email
                                     *</label>
                                 <input type="email" id="email" name="email" required
                                     class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200">
@@ -59,7 +59,7 @@
                             </div>
 
                             <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon
                                     *</label>
                                 <input type="tel" id="phone" name="phone" required
                                     class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200">
@@ -69,21 +69,22 @@
                             </div>
 
                             <div>
-                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Topik
+                                    Pesan</label>
                                 <select id="subject" name="subject"
                                     class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200">
-                                    <option value="">Select a subject</option>
-                                    <option value="General Inquiry">General Inquiry</option>
-                                    <option value="Product Information">Product Information</option>
-                                    <option value="Service Request">Service Request</option>
-                                    <option value="Complaint">Complaint</option>
-                                    <option value="Other">Other</option>
+                                    <option value="">Pilih Topik</option>
+                                    <option value="General Inquiry">Pertanyaan Umum</option>
+                                    <option value="Product Information">Informasi Produk</option>
+                                    <option value="Service Request">Permintaan Layanan</option>
+                                    <option value="Complaint">Keluhan</option>
+                                    <option value="Other">Lainnya</option>
                                 </select>
                             </div>
                         </div>
 
                         <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Pesan Anda
                                 *</label>
                             <textarea id="message" name="message" rows="5" required
                                 class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200"></textarea>
@@ -94,17 +95,17 @@
 
                         <button type="submit"
                             class="w-full px-6 py-3 bg-red-500 text-white font-medium rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-200">
-                            Send Message
+                            Kirim Pesan
                         </button>
                     </form>
                 </div>
 
                 <!-- Contact Information -->
                 <div>
-                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Contact Information</h2>
-                    <p class="text-gray-600 mb-8">
-                        Visit our store, give us a call, or send us an email. We're always ready to serve you and answer any
-                        questions you might have.
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Informasi Kontak</h2>
+                    <p class="text-gray-600 mb-8 text-justify">
+                        Kunjungi kantor kami, hubungi kami melalui telepon atau email. Kami selalu siap membantu Anda dengan
+                        senang hati.
                     </p>
 
                     <div class="bg-white p-6 rounded-lg shadow-md space-y-6">
@@ -117,7 +118,7 @@
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                             <div>
-                                <h3 class="text-lg font-semibold text-blue-900 mb-1">Our Location</h3>
+                                <h3 class="text-lg font-semibold text-blue-900 mb-1">Lokasi Kantor</h3>
                                 <a href="https://maps.app.goo.gl/h3PmeFRsQxm4nSDu5" target="_blank">
                                     <p class="text-gray-700">Kembang Kuning, Klapanunggal, Bogor Regency</p>
                                     <p class="text-gray-700">West Java, 16710</p>
@@ -132,7 +133,7 @@
                                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                             </svg>
                             <div>
-                                <h3 class="text-lg font-semibold text-blue-900 mb-1">Phone & Whatsapp</h3>
+                                <h3 class="text-lg font-semibold text-blue-900 mb-1">Telepon & Whatsapp</h3>
                                 <p class="text-gray-700">Main: +62 812 2506 0208</p>
                             </div>
                         </div>
@@ -145,7 +146,7 @@
                             </svg>
                             <div>
                                 <h3 class="text-lg font-semibold text-blue-900 mb-1">Email</h3>
-                                <p class="text-gray-700">ptkusumakaryapratama@gmail.com</p>
+                                <p class="text-gray-700">ptkusumakaryapratama01@gmail.com</p>
                             </div>
                         </div>
                     </div>
