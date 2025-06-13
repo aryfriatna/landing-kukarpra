@@ -8,7 +8,7 @@
         <div class="container mx-auto px-4 pt-12">
             <div class="max-w-4xl">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4">Kusuma Karya Pratama</h1>
-                <p class="text-xl text-gray-300 mb-6">
+                <p class="text-xl text-gray-300 italic mb-6">
                     Your Trusted Partner for Heavy Equipment Wheel System Solution.
                 </p>
                 <div class="w-20 h-2 bg-red-500 mb-8"></div>
@@ -69,7 +69,8 @@
 
                     <!-- Slide 1 -->
                     <div class="swiper-slide relative">
-                        <img src="{{ asset('assets/images/forklift.jpg') }}" class="w-full h-full object-cover" />
+                        <img src="{{ asset('assets/images/forklift.jpg') }}" class="w-full h-full object-cover"
+                            alt="Ban Forklift" />
                         <div class="absolute inset-0 bg-black/40"></div>
                         <div class="absolute inset-0 flex items-center justify-center text-center">
                             <h2 class="text-white text-4xl md:text-6xl font-bold">Ban Forklift</h2>
@@ -78,7 +79,8 @@
 
                     <!-- Slide 2 -->
                     <div class="swiper-slide relative">
-                        <img src="{{ asset('assets/images/tronton.jpg') }}" class="w-full h-full object-cover" />
+                        <img src="{{ asset('assets/images/tronton.jpg') }}" class="w-full h-full object-cover"
+                            alt="Ban Tronton" />
                         <div class="absolute inset-0 bg-black/40"></div>
                         <div class="absolute inset-0 flex items-center justify-center text-center">
                             <h2 class="text-white text-4xl md:text-6xl font-bold">Ban Tronton</h2>
@@ -87,7 +89,8 @@
 
                     <!-- Slide 3 -->
                     <div class="swiper-slide relative">
-                        <img src="{{ asset('assets/images/dump-truck.png') }}" class="w-full h-full object-cover" />
+                        <img src="{{ asset('assets/images/dump-truck.png') }}" class="w-full h-full object-cover"
+                            alt="Ban Dump Truck" />
                         <div class="absolute inset-0 bg-black/40"></div>
                         <div class="absolute inset-0 flex items-center justify-center text-center">
                             <h2 class="text-white text-4xl md:text-6xl font-bold">Ban Dump Truck</h2>
@@ -96,7 +99,8 @@
 
                     <!-- Slide 4 -->
                     <div class="swiper-slide relative">
-                        <img src="{{ asset('assets/images/light-truck.jpg') }}" class="w-full h-full object-cover" />
+                        <img src="{{ asset('assets/images/light-truck.jpg') }}" class="w-full h-full object-cover"
+                            alt="Ban Light Truck" />
                         <div class="absolute inset-0 bg-black/40"></div>
                         <div class="absolute inset-0 flex items-center justify-center text-center">
                             <h2 class="text-white text-4xl md:text-6xl font-bold">Ban Light Truck</h2>
