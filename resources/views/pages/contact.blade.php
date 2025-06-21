@@ -134,7 +134,7 @@
                             </svg>
                             <div>
                                 <h3 class="text-lg font-semibold text-blue-900 mb-1">Telepon & Whatsapp</h3>
-                                <p class="text-gray-700">Main: +62 812 2506 0208</p>
+                                <p class="text-gray-700">Utama: +62 812 2506 0208</p>
                             </div>
                         </div>
 

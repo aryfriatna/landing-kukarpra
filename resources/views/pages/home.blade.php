@@ -63,7 +63,7 @@
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-blue-900 mb-4">Why Choose Us?</h2>
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Kenapa Memilih Kami?</h2>
                 <p class="text-gray-700 max-w-2xl mx-auto text-justify lg:text-center ">
                     PT Kusuma Karya Pratama menyediakan berbagai Ban seperti, Forklift, Truck Ringan, Truck sedang dan
                     truck Berat yang biasanya digunakan di bidang industrial, pertambangan, pergudangan, pertanian,
@@ -137,7 +137,7 @@
     <!-- CTA Section -->
     <section class="py-16 bg-blue-800 text-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+            <h2 class="text-3xl font-bold mb-4">Siap untuk Memulai?</h2>
             <p class="text-white max-w-2xl mx-auto mb-8">
                 Untuk pertanyaan dan informasi mengenai kebutuhan Ban Truck dan Forklift anda, silahkan hubungi kami.
                 Kami akan melayani anda dengan senang hati.
